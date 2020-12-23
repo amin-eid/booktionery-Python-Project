@@ -9,16 +9,15 @@ input[type=text]{
     font-size: x-small;
     margin-right: 20px;
 }
+input[type=password]{
+    margin-top: 10px;
+    font-size: x-small;
+    margin-right: 20px;
+}
 .d-block{
     display: block;
 }
-.logo-img img{
-    margin-left: auto;
-    margin-right: auto;
-    /* left: 50%;
-    right: 50%; */
-    width: 50%;
-}
+
 .btn-m{
     margin-top: 25px;
 }
@@ -35,22 +34,22 @@ input[type=text]{
     justify-content: center;
 }
 .form-control:focus{
-    border-color: #d22f2cbb;
+    border-color: #d22f2cbb !important;
     box-shadow: 0 0 0 0.25rem rgb(210 46 44 / 0.25);
 }
 .btn-outline-success{
-    color: #d22e2c;
-    border-color: #d22f2cbb;
+    color: #d22e2c !important;
+    border-color: #d22f2cbb !important;
 }
 .btn-outline-success:hover{
-    color: #ffffff;
-    background-color: #d22e2c;
-    border-color: #d22f2cbb;
+    color: #ffffff !important;
+    background-color: #d22e2c !important;
+    border-color: #d22f2cbb !important;
 }
 .btn-outline-success:active{
-    color: #ffffff;
-    background-color: #d22e2c;
-    border-color: #d22f2cbb;
+    color: #ffffff !important;
+    background-color: #d22e2c !important;
+    border-color: #d22f2cbb !important;
 }
 .btn-outline-success:focus{
     box-shadow: 0 0 0 0.25rem rgb(210 46 44 / 0.25);
@@ -68,4 +67,30 @@ input[type=text]{
 }
 .margin-l-r{
     margin: 0px 15px;
+}
+.anchor{
+    color: #d22e2c !important;
+    text-decoration: none;
+}
+.anchor:hover{
+    color: black;
+    text-decoration: none;
+}
+.center{
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+@media screen and (max-width: 992px){
+    .logo-img img{
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .cart{
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
 }

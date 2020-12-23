@@ -5,6 +5,8 @@ from . import models
 
 
 def root(request):
+    if 'user_id' in request.session:
+        redirect('/succes')
     return render(request,'main.html')
 
 def reg(request):
@@ -14,7 +16,9 @@ def welcome(request):
     if 'user_id' in request.session:
         context = {
             'first_name':request.session['first_name'],
-            'last_name':request.session['last_name']
+            'last_name':request.session['last_name'],
+            'user_id':request.session['user_id'],
+            'pos':'main',
         }
         return render(request,'main.html',context)
     return redirect('/')
@@ -51,10 +55,18 @@ def login(request):
                     request.session['user_id'] = user.id
                     request.session['first_name'] = user.first_name
                     request.session['last_name'] = user.last_name
-                    return redirect('/success')
-                    print("success")
+                return redirect('/success')
     return redirect('/')
 
+def user_profile(request,id):
+    if 'user_id' in request.session:
+        context = {
+            'first_name':request.session['first_name'],
+            'last_name':request.session['last_name'],
+            'user_id':request.session['user_id'],
+            'pos':'my_profile',
+        }
+        return render(request,'user.html',context)
 
 
 def logout(request):

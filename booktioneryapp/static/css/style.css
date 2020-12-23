@@ -28,49 +28,42 @@ td:last-child{
     color:red;
     /* text-align:center; */
 }
-
-
 .messages {
     list-style-type: none;
 }
-
 td input[type="text"], input[type="password"],input[type="email"]{
     background-color:#f1f1f1;
     width:90%;
     padding:3px;
     }
-    
-
-
-
 .thanks{
     margin:0 auto;
     width:450px;
-    background-color:white;
-    border:1px solid #d22e2c;
-    background-color:#ededf0;
+    background-color:white !important;
+    border:1px solid #d22e2c !important;
+    background-color:#ededf0 !important;
     font-size:24px;
     padding:10px;
 }
 .btn-outline-success{
-    color: #d22e2c;
-    border-color: #d22f2cbb;
+    color: #d22e2c !important;
+    border-color: #d22f2cbb !important;
 }
 .btn-outline-success:hover{
-    color: #ffffff;
-    background-color: #d22e2c;
-    border-color: #d22f2cbb;
+    color: #ffffff !important;
+    background-color: #d22e2c !important;
+    border-color: #d22f2cbb !important;
 }
 .btn-outline-success:active{
-    color: #ffffff;
-    background-color: #d22e2c;
-    border-color: #d22f2cbb;
+    color: #ffffff !important;
+    background-color: #d22e2c !important;
+    border-color: #d22f2cbb !important;
 }
 .btn-outline-success:focus{
     box-shadow: 0 0 0 0.25rem rgb(210 46 44 / 0.25);
 }
 .form-control:focus{
-    border-color: #d22f2cbb;
+    border-color: #d22f2cbb !important;
     box-shadow: 0 0 0 0.25rem rgb(210 46 44 / 0.25);
 }
 

@@ -125,3 +125,13 @@ h6{
 .btn-outline-success:focus{
     box-shadow: 0 0 0 0.25rem rgb(210 46 44 / 0.25);
 }
+.reg{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+.reg input[type=text],input[type=password]{
+    margin-top: 10px;
+	margin-right: 20px;
+	max-width: 200px;
+}
