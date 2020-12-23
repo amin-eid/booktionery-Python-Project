@@ -4,9 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<<<<<<< HEAD
+    
     <script src="{% static 'js/validate.js' %}"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+=======
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script src="{% static 'js/validate.js' %}"></script>
+<<<<<<< HEAD
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+=======
+
+>>>>>>> 42bcbba83cd2e946a226e9217c0ce1ec0ee17637
+>>>>>>> 12b556b72a7873520cd0b60fc3ce4e8f8a1c6b0c
     <title>Registration Form</title>
   </head>
   <body>
@@ -17,6 +28,26 @@
           <table>
             <tr>
               <td>First Name:</td>
+<<<<<<< HEAD
+              <td><input class="form-control me-2" type="text" name="fname" minlength="2" required /></td>
+              <td>Last Name:</td>
+              <td><input type="text" class="form-control me-2" name="lname" minlength="2" required /></td>
+            </tr>
+            <tr>
+                <td>Mobile No:</td>
+                <td><input type="text" class="form-control me-2" name="mobile" minlength="10" maxlength="10" required /></td>
+                <td>Address:</td>
+                <td><input type="text" class="form-control me-2" name="address" minlength="2" required /></td>
+            </tr>
+            <tr>
+              <td>Password:</td>
+              <td><input type="password" class="form-control me-2" name="password" id="password" minlength="8" required/></td>
+              <td>Confirm Pwd:</td>
+              <td><input type="password" class="form-control me-2" name="pwdconfirm" id="pwdconfirm" minlength="8" required onkeyup="check();"/></td>
+            </tr>
+            <tr>
+              <td colspan="4"><input class="btn btn-outline-success" type="submit" value="Register" /></td>
+=======
               <td><input type="text" name="fname" minlength="2" required /></td>
               <td>Last Name:</td>
               <td><input type="text" name="lname" minlength="2" required /></td>
@@ -35,6 +66,7 @@
             </tr>
             <tr>
               <td colspan="4"><input type="submit" value="Register" /></td>
+>>>>>>> 42bcbba83cd2e946a226e9217c0ce1ec0ee17637
             </tr>
           </table>
           <span id="message"></span>
