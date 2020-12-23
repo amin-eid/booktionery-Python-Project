@@ -8,8 +8,12 @@
 text-align: center;
 }
 table{
+<<<<<<< HEAD
     margin:0 auto;
     width:80% !important;
+=======
+    width:100%;
+>>>>>>> 42bcbba83cd2e946a226e9217c0ce1ec0ee17637
     text-align:center;
 
 }
@@ -40,6 +44,7 @@ td input[type="text"], input[type="password"],input[type="email"]{
     }
     
 
+<<<<<<< HEAD
 
 
 .thanks{
@@ -72,3 +77,14 @@ td input[type="text"], input[type="password"],input[type="email"]{
     border-color: #d22f2cbb;
     box-shadow: 0 0 0 0.25rem rgb(210 46 44 / 0.25);
 }
+=======
+td input[type="submit"]{
+    width:100px;
+    height:40px;
+    background-color:#d22e2c;
+    border:1px solid black;
+    border-radius:7px;
+    margin-top:40px;
+}
+
+>>>>>>> 42bcbba83cd2e946a226e9217c0ce1ec0ee17637

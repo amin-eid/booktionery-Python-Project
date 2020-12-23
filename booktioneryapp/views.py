@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 def index(request):
+<<<<<<< HEAD
     return render(request,'main.html')
 
 
@@ -22,3 +23,11 @@ def login(request):
                     request.session['last_name'] = user.last_name
                     return redirect('/quotes')
     return redirect('/')
+=======
+    return render(request,'index.html')
+
+from django.shortcuts import render, HttpResponse
+def register(request):
+    return render(request,'register.html')
+    
+>>>>>>> 42bcbba83cd2e946a226e9217c0ce1ec0ee17637
