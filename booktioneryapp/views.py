@@ -1,10 +1,13 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponse
 from django.contrib import messages
 from . import models
 
 
 
 def root(request):
+    return render(request,'main.html')
+
+def reg(request):
     return render(request,'register.html')
 
 def welcome(request):
@@ -31,7 +34,7 @@ def registration(request):
                     request.session['first_name'] = user.first_name
                     request.session['last_name'] = user.last_name
                 return redirect('/success')
-    return redirect('/')
+        return redirect('/')
 
 
 def login(request):
@@ -49,6 +52,7 @@ def login(request):
                     request.session['first_name'] = user.first_name
                     request.session['last_name'] = user.last_name
                     return redirect('/success')
+                    print("success")
     return redirect('/')
 
 

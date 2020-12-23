@@ -1,0 +1,136 @@
+
+body{
+	background-color:#ededf0;
+	height: 1050px;
+	font-family: cursive;
+
+}
+.box-element{
+	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 40px;
+	min-height: 400px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 100px;
+
+}
+
+.col-lg-12{
+	margin-top: 50px;
+	text-align: center;
+}
+
+.btn-default{
+	width: 75%;
+	color: #ededf0;
+	border-color: black;
+	background-color: #d22e2c;
+
+}
+.btn-default:hover{
+background-color: #ededf0 ;	
+}
+
+
+.prod_img{
+	width: 100%;
+	height: 100%;
+
+}
+.prod_img img{
+	border-style: groove;
+}
+.cart-row{
+    margin-top: 40px;
+	display: flex;
+	flex-direction: column;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 500px;
+
+}
+
+#product_name{
+	color:  #d22e2c;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+#desc{
+	font-size: 16px;
+    padding: 20px;
+    height: 50%;
+    text-align: justify;
+	
+}
+#quantity{
+	width: 50%;
+	background-color: #ededf0;
+    text-align: center;
+    float: left;
+    color: gray;
+    height: 100%;
+    border:2px solid #ededf0;
+
+}
+label{
+	border:solid gray;
+	color: gray;
+	background-color:#ededf0;
+	width: 75%;
+	height: 45px;
+	border-radius: .25rem;
+
+}
+a{
+	margin: 0 auto;
+}
+
+.box-elements{
+	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 10px;
+	height: 220px;
+	margin-bottom: 100px; 
+}
+
+.thumbnail{
+	width: 100%;
+	min-height: 200px;
+	-webkit-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+    -moz-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+    box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+}
+
+.product{
+	border-radius: 0 0 4px 4px;
+}
+.col-lg-3{
+	margin-top: 20px;
+	text-align: center;
+
+}
+.btn-outline-success{
+	border-radius: 0;
+	width: 120px;
+	border-color: #d22e2c;
+	color: #d22e2c;
+	border-radius: .25rem;
+
+}
+.btn-outline-success:hover{
+background-color: #d22e2c;	
+}
+
+h3{
+	font-size: 26px;
+	color: #d22e2c;
+	text-align: center;
+
+}
+
+

@@ -26,7 +26,7 @@ class UserManager(models.Manager):
     def basic_validator_login(self, postData):
         errors = {}
         user = User.objects.filter(mobile_number = postData['mobile_number'])
-        if not len(postData['mobile_number']) < 10:
+        if  len(postData['mobile_number']) < 10:
             errors['mobile_number'] = "wrong Mobile Number!"
         if not len(user):
             errors['mobile_number'] = "Wrong Mobile Number Or not registered"
@@ -37,7 +37,7 @@ class UserManager(models.Manager):
         return errors
 
 
-class User_Role(models.Model):
+class Role(models.Model):
     role_name = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -48,7 +48,7 @@ class User(models.Model):
     mobile_number = models.CharField(max_length=255)
     address = models.TextField()
     password =  models.CharField(max_length=255)
-    role = models.ForeignKey(User_Role, related_name="role_users", on_delete = models.CASCADE)
+    role = models.ForeignKey(Role, related_name="role_users",default=2, on_delete = models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
@@ -63,9 +63,9 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     price = models.FloatField()
-    product= models.ForeignKey(Category, related_name="Category_products", on_delete = models.CASCADE)
+    cat= models.ForeignKey(Category, related_name="Category_products", on_delete = models.CASCADE)
     available_quantity = models.IntegerField()
-    img = models.ImageField()
+    img = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
