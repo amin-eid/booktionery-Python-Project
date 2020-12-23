@@ -33,15 +33,13 @@
                 </form>
             </div>
             <div class="col-lg-5 space-between">
-                <form class="d-flex space-center" action="" method="POST">
+                <form class="d-flex space-center" action="/login" method="POST">
+                    {% csrf_token %}
                     <div class="margin-l-r">
-                        <input class="form-control me-2" name="text" type="text" placeholder="Mobile Number"
+                        <input class="form-control me-2" name="mobile_number" type="text" placeholder="Mobile Number"
                             id="mobile_number">
-
-
                         <input class="form-control me-2" name="password" type="text" placeholder="Password"
                             id="password">
-
                     </div>
                     <div>
                         <button class="btn btn-outline-success btn-m" type="submit">Log-in</button>
