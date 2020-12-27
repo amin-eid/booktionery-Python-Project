@@ -16,4 +16,4 @@ IP Address:3.22.95.170
 
 Images:
 =========
-![](/images/screenshot1.png)
+![](images/screenshot1.png)
