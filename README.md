@@ -14,5 +14,5 @@ the project is a requirment for the fullfilment of the python stack of coding do
 Visit this website via this IP address:
 IP Address:3.22.95.170
 
-![GitHub Logo](/images/sc3.png)
+![GitHub Logo](images/sc3.png)
 
