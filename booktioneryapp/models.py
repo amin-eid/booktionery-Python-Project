@@ -66,25 +66,36 @@ class Product(models.Model):
     cat= models.ForeignKey(Category, related_name="Category_products", on_delete = models.CASCADE)
     available_quantity = models.IntegerField()
     img = models.CharField(max_length=255)
-    created_at = models.DateTimeField(auto_now_add=True)
+    #created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
 
 class Order(models.Model):
-    quantity = models.CharField(max_length=255)
     user = models.ForeignKey(User, related_name="user_orders", on_delete = models.CASCADE)
-    product = models.ManyToManyField(Product, related_name="product_orders")
+    # product = models.ManyToManyField(Product, related_name="product_orders")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    total_price = models.FloatField(null=True)
 
 
 
 class Cart(models.Model):
     user = models.ForeignKey(User, related_name="user_cart", on_delete = models.CASCADE)
     product = models.ForeignKey(Product, related_name="product_cart", on_delete = models.CASCADE)
-    order = models.ForeignKey(Order, related_name="order_cart", on_delete = models.CASCADE)
+    order = models.ForeignKey(Order, related_name="order_cart",null=True, on_delete = models.CASCADE)
+    quantity=models.DecimalField(decimal_places=0, max_digits=2)
+    deleted = models.DecimalField(decimal_places=0, max_digits=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+def reg_errors(check_info):
+    errors = User.objects.basic_validator_register(check_info)
+    return errors
+
+def login_errors(check_info):
+    errors = User.objects.basic_validator_login(check_info)
+    return errors
 
 
 def register(reg_info):
@@ -110,11 +121,117 @@ def login(log_info):
             return user_in_data[0]
     return False
 
-def reg_errors(check_info):
-    errors = User.objects.basic_validator_register(check_info)
-    return errors
+def get_user(user_id):
+    user = User.objects.get(id=user_id)
+    return user
 
-def login_errors(check_info):
-    errors = User.objects.basic_validator_login(check_info)
-    return errors
+def all_users():
+    return User.objects.all()
+
+def user_orders(user_id):
+    user = User.objects.get(id=user_id)
+    orders = user.user_orders.all()
+    return orders
+
+def all_products():
+    products = Product.objects.all()
+    return products
+
+
+
+def get_product(product_id):
+    product = Product.objects.filter(id=product_id)
+    return product[0]
+
+def get_product_by_name(product_name):
+    productname = product_name['product']
+    product = Product.objects.filter(name=productname)
+    return product[0]
+
+def all_categorys():
+    category_list = Category.objects.all()
+    return category_list
+
+def get_category(product_cat_name):
+    category = Category.objects.filter(name=product_cat_name)
+    return category[0]
+
+def add_to_cart(user,product):
+    Cart.objects.create(user=user,product=product,quantity=1,deleted=0)
+
+def add_to_cart_from_product(data,user_id,product_id):
+    quantity=int(data['quantity'])
+    user=User.objects.get(id=user_id)
+    product=Product.objects.filter(id=product_id)
+    Cart.objects.create(user=user,product=product[0],quantity=quantity,deleted=0)
+
+def get_user_cart(user):
+    cart_content = user.user_cart.filter(deleted=0)
+    return cart_content
+
+def add_order(user_id):
+    user=User.objects.get(id=user_id)
+    userCart=Cart.objects.filter(user=user,deleted=0)
+    if len(userCart)>0:
+        Order.objects.create(user=user)
+        user.user_orders.add(Order.objects.last())
+        lastOrder=Order.objects.last()
+    order_total_price=0
+    for product in userCart:
+        if product.product.available_quantity >0:
+            lastOrder.order_cart.add(product)
+            order_total_price+=float(product.product.price)*float(product.quantity)
+            cartDelete=product
+            cartDelete.deleted = 1
+            cartDelete.save()
+            product.product.available_quantity-=product.quantity
+            product.product.save()
+    lastOrder.total_price=order_total_price
+    lastOrder.save()
+    context= {
+        'orderItems':lastOrder.order_cart.filter(deleted=1),
+        'order_total_price':order_total_price,
+    }
+    return context
+
+
+def item_to_delete(item_id):
+    item_to_delete = Cart.objects.get(id=item_id)
+    item_to_delete.delete()
+
+def all_orders():
+    return Order.objects.all()
+
+def adminLogin(log_info):
+    user_in_data = User.objects.filter(mobile_number=log_info['mobile_number'])
+    if len(user_in_data):
+        if user_in_data[0].role.role_name == 'admin':
+            if bcrypt.checkpw(log_info['password'].encode(), user_in_data[0].password.encode()):
+                return user_in_data[0]
+    return False
+
+def delete_product(product_id):
+    product = Product.objects.get(id=product_id)
+    product.delete()
+
+def update_product(product_info,product_id):
+    product=Product.objects.get(id=product_id)
+    product.name=product_info['name']
+    product.description=product_info['description']
+    product.price=product_info['price']
+    product.available_quantity=product_info['available_quantity']
+    product.cat=Category.objects.get(name=product_info['category'])
+    print(product.cat.name)
+    product.save()
+    return product
+
+
+# def add_product(product_info):
+#     #product=Product.objects.get(id=product_id)
+#     product.name=product_info['name']
+#     product.description=product_info['description']
+#     product.price=product_info['price']
+#     product.available_quantity=product_info['available_quantity']
+#     product.cat=Category.objects.get(name=product_info['category'])
+#     return product
 

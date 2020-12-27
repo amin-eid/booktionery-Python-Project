@@ -1,3 +1,8 @@
+body{
+	background-color:#ededf0;
+	font-family: cursive;
+
+}
 .header{
     background-color: #ededf0;
 }
@@ -35,7 +40,7 @@ input[type=password]{
 }
 .form-control:focus{
     border-color: #d22f2cbb !important;
-    box-shadow: 0 0 0 0.25rem rgb(210 46 44 / 0.25);
+    box-shadow: 0 0 0 0.25rem rgb(210 46 44 / 0.25) !important;
 }
 .btn-outline-success{
     color: #d22e2c !important;
@@ -52,7 +57,7 @@ input[type=password]{
     border-color: #d22f2cbb !important;
 }
 .btn-outline-success:focus{
-    box-shadow: 0 0 0 0.25rem rgb(210 46 44 / 0.25);
+    box-shadow: 0 0 0 0.25rem rgb(210 46 44 / 0.25) !important;
 }
 
 .navbar-nav .nav-item{

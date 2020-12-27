@@ -1,3 +1,8 @@
+body{
+	background-color:#ededf0;
+	font-family: cursive;
+
+}
 .reg{
     margin:0px auto;
     padding:20px;
@@ -7,19 +12,29 @@
 .register{
 text-align: center;
 }
-table{
-
-    margin:0 auto;
-    width:80% !important;
-    text-align:center;
-
+.user_table {
+    margin-top: 5%;
+    border-collapse: collapse;
+    width: 100%;
 }
-td{
-    padding-left:20px;
-    text-align:left;
+.user_table td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
 }
-
-td:last-child{
+.user_table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+.user_table tr:hover {
+    background-color: #ddd;
+}
+.user_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #d22e2c;
+    color: white;
+}
+.user_table td:last-child{
     text-align:center;
 }
 .errors{
@@ -44,6 +59,7 @@ td input[type="text"], input[type="password"],input[type="email"]{
     background-color:#ededf0 !important;
     font-size:24px;
     padding:10px;
+    text-align: center;
 }
 .btn-outline-success{
     color: #d22e2c !important;

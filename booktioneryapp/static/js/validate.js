@@ -1,6 +1,6 @@
 var check = function() {
   if (document.getElementById('password').value ==
-    document.getElementById('pwdconfirm').value) {
+    document.getElementById('confirm').value) {
     document.getElementById('message').style.color = 'green';
     document.getElementById('message').innerHTML = 'passwords are matching';
   } else {

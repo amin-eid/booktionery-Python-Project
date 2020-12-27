@@ -1,5 +1,7 @@
+{% include "header/header_s2.html" %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +9,45 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <title>Thank you page!</title>
 </head>
+
 <body>
     <div class="thanks">
         Thank you for your purchase!<br>
         Your order has been completed, You will receive the ordered items within two days.
         Have a nice day!
     </div>
+    <div class="thanks">
+        Order details
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>quantity</th>
+                <th>Price</th>
+                <th>Total Price</th>
+            </tr>
+            {%for item in orderItems %}
+            <tr>
+                <td>{{item.product.name}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{% widthratio item.product.price 1 item.quantity%}</td>
+            </tr>
+            {%endfor%}
+            <tr>
+                <td colspan="2">Total Price:</td><td> {{order_total_price}}</td>
+            </tr>
+        </table>
+        <p>
+            you will be redirect to the main page withen 10 seconds
+        </p>
+    </div>
+    <script>
+        function redirect(){
+            window.location.href = "/success";
+        }
+    
+        setTimeout(redirect, 10000);
+    </script>
+    {% include "footer/footer.html" %}
 </body>
+
 </html>

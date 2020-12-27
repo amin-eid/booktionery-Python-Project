@@ -10,35 +10,28 @@
     <title>User Orders page</title>
 </head>
 <body>
-    <table class="table table-striped">
-        <thead style="background-color: rgb(116, 109, 109);">
+  <div class="container">
+    <table class="user_table">
           <tr>
-            <th scope="col">Order ID</th>
-            <th scope="col">Products</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Price</th>
+            <th>Order ID</th>
+            <th>Products</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total Price</th>
           </tr>
-        </thead>
         <tbody>
+          {%for order in user_orders%}
+        
           <tr>
-            <th scope="row">1</th>
-            <td>Eraser</td>
-            <td>3</td>
-            <td>$$</td>
+            <td rowspan={{order.order_cart.all.count}}>{{order.id}}</td>{%for item in order.order_cart.all%}
+            <td>{{item.product.name}}</td><td>{{item.quantity}}</td><td>{{item.product.price}}</td><td>{% widthratio item.product.price 1 item.quantity%}</td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Book</td>
-            <td>2</td>
-            <td>$$</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>notebook</td>
-            <td>4</td>
-            <td>$$</td>
-          </tr>
+          {%endfor%}
+          <tr><td></td><td></td><td></td><td><b>Order Price</b></td><td><b>{{order.total_price}}</b></td></tr>
+          {%endfor%}
         </tbody>
       </table>
+    </div>
+    {% include "footer/footer.html" %}
 </body>
 </html>
