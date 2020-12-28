@@ -24,5 +24,5 @@ IP Address:3.22.95.170
 ![](https://github.com/amin-eid/booktionery/blob/master/images/sc3.PNG)
 ![](https://github.com/amin-eid/booktionery/blob/master/images/sc4.PNG)
 ![](https://github.com/amin-eid/booktionery/blob/master/images/ajax.PNG)
-![](https://github.com/amin-eid/booktionery/blob/master/images/admin.PNG)
+![](https://github.com/amin-eid/booktionery/blob/master/images/admin.png)
 ![](https://github.com/amin-eid/booktionery/blob/master/images/cart.PNG)
