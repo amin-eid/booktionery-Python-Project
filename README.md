@@ -6,9 +6,13 @@ booktionery project is an e-Commerce website that represent stationery shop wher
 The web App helps the customers to order products as easy as possible
 
 maintained and contributed by:
-amin eid
-mais droubi
-abdusalam qamhiyeh
+
+Amin Eid
+
+Mais Droubi
+
+Abdusalam Qamhiyeh
+
 
 supervised by hazem kiwan
 
@@ -23,6 +27,6 @@ IP Address:3.22.95.170
 ![](https://github.com/amin-eid/booktionery/blob/master/images/screenshot2.PNG)
 ![](https://github.com/amin-eid/booktionery/blob/master/images/sc3.PNG)
 ![](https://github.com/amin-eid/booktionery/blob/master/images/sc4.PNG)
-![](https://github.com/amin-eid/booktionery/blob/master/images/ajax.PNG)
+![](https://github.com/amin-eid/booktionery/blob/master/images/ajax.png)
 ![](https://github.com/amin-eid/booktionery/blob/master/images/admin.png)
 ![](https://github.com/amin-eid/booktionery/blob/master/images/cart.PNG)
