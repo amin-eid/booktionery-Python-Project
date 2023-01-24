@@ -14,7 +14,7 @@ Mais Droubi
 Abdusalam Qamhiyeh
 
 
-supervised by hazem kiwan
+
 
 the project is a requirment for the fullfilment of the python stack of coding dojo bootcamp held on site in Palestine by Axsos Academy.
 Visit this website via this IP address:
